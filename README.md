@@ -1,37 +1,76 @@
 # Pi Digit Checker
 
-Bu program, pi sayısının ilk 1 milyon basamağı içinde belirli bir sayı dizisini arar.
+This program searches for a specific sequence of numbers within the digits of pi.
 
-## Gereksinimler
+## Requirements
 
-- C++ derleyici (g++)
-- libcurl kütüphanesi
+MacOS:
+
+- C++ compiler (g++)
+- libcurl library
 - make
 
-## Kurulum
+Windows:
 
-macOS için libcurl kurulumu:
+- MSYS2
+- C++ compiler (g++)
+- curl library
+
+## Installation
+
+Installing libcurl on macOS:
 
 ```bash
 brew install curl
 ```
 
-## Kullanım
+Installing libcurl on Windows:
 
-1. `check.txt` dosyasına aranacak sayıyı yazın
-2. Programı derlemek için:
+Open "C:\msys64\mingw64.exe"
+
+```bash
+pacman -S mingw-w64-x86_64-curl
+```
+
+## Usage
+
+For macOS:
+
+1. Write the number to search for in the `check.txt` file.
+2. To compile the program:
    ```bash
    make
    ```
-3. Programı çalıştırmak için:
+3. To run the program:
    ```bash
    ./pi_checker
    ```
 
-## Temizlik
+For Windows:
 
-Derlenen dosyaları temizlemek için:
+1. Write the number to search for in the `check.txt` file.
+2. Open "C:\msys64\mingw64.exe".
+3. To compile the program:
+
+   ```bash
+   g++ pi_checker.cpp -o pi_checker.exe -lcurl
+   ```
+
+4. To run the program:
+   ```bash
+   ./pi_checker
+   ```
+
+## Cleanup
+
+To clean up compiled files:
+
+For macOS:
 
 ```bash
 make clean
 ```
+
+For Windows:
+
+Just delete `pi_checker.exe`.
